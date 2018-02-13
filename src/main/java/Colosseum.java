@@ -73,6 +73,37 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Please name your Pokemon: ");
+        tempPokemon.name = myScan.nextLine();
+        System.out.println("How many hit points will it have? (1-50): ");
+        tempPokemon.hitPoints = myScan.nextInt();
+
+        while (tempPokemon.hitPoints < 1 || tempPokemon.hitPoints > MAX_HIT_POINTS) {
+            System.out.println("Sorry. Hit points must be between 1 and 50: ");
+            tempPokemon.hitPoints = myScan.nextInt();
+        }
+
+        System.out.println("Split fifty points between attack level and defense level");
+        System.out.println("Enter your attack level (1-49): ");
+        tempPokemon.attackLevel = myScan.nextInt();
+
+        while (tempPokemon.attackLevel < 1 || tempPokemon.attackLevel > MAX_HIT_POINTS - 1) {
+            System.out.println("Sorry. The attack level must be between 1 and 49: ");
+            tempPokemon.attackLevel = myScan.nextInt();
+        }
+
+        System.out.println("Enter your defense level (1-3): ");
+        tempPokemon.defenseLevel = myScan.nextInt();
+
+        //while (tempPokemon.defenseLevel < 1 || tempPokemon.defenseLevel > 3) {
+         //   System.out.println("Sorry. The attack level must be between 1 and 49: ");
+        //    tempPokemon.attackLevel = myScan.nextInt();
+       // }
+
+       // if ((tempPokemon.attackLevel + tempPokemon.defenseLevel) > MAX_HIT_POINTS) {
+
+        //}
+
         return tempPokemon;
     }
 
@@ -113,14 +144,14 @@ public class Colosseum {
         System.out.println("Player 1, build your Pokemon!");
         System.out.println("=================");
         firstPokemon = buildPokemon();
-        firstPokemon.name = "Chuchu";
+        //firstPokemon.name = "Chuchu";
 
         System.out.println("");
 
         System.out.println("Player 2, build your Pokemon!");
         System.out.println("==================");
         secondPokemon = buildPokemon();
-        secondPokemon.name = "Xyz";
+        //secondPokemon.name = "Xyz";
     }
 
     /**
